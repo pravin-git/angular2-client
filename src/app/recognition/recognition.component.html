@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-sm-12">
+        <label>Nominate</label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <tag-input [ngModel]="[]" theme='dark' (onAdd)="onItemAdded($event)" (onRemove)="onItemRemoved($event)" [onlyFromAutocomplete]="true">
+            <tag-input-dropdown theme='dark' [showDropdownIfEmpty]="true" [autocompleteItems]="users">
+            </tag-input-dropdown>
+        </tag-input>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-white post panel-shadow">
+
+            <div class="post-description postbox">
+
+                <textarea cols="5" rows="3" class="form-control" [(ngModel)]="myblog">  </textarea>
+                <br/>
+                <div class="stats">
+                    <a (click)="addRecongnition()" class="btn btn-default stat-item">Appreciate</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div *ngFor="let recongnition of recongnitions" class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div *ngFor="let user of recongnition.users">
+                    {{user.username}}
+                </div>
+                <span class="pull-right">{{recongnition.recognitionDate | date: 'dd/MM/yyyy'}}</span>
+            </div>
+            <div class="panel-body">
+                <div class="col-xs-2 text-center">
+                    <i class="glyphicon glyphicon-star gi-3x"></i>
+                </div>
+                <div class="col-xs-8 text-left">
+                    <p>{{recongnition.recognition}}</p>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <p>{{recongnition.creator.username}}</p>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <my-comment [recognitionId]=recongnition._id></my-comment>
+            </div>
+        </div>
+    </div>
+</div>

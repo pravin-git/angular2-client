@@ -1,0 +1,19 @@
+<a href="javascript:void(0);" class="pull-left"><i class="glyphicon glyphicon-comment"></i> {{commentCount}}</a>
+<a href="javascript:void(0);" class="pull-left"><i class="glyphicon glyphicon-thumbs-up"></i> {{likeCount}}</a>
+<a class="pull-right"><i class="glyphicon glyphicon-comment"></i> Comment</a>
+<a (click)="postLikeCounts()" class="pull-right"><i class="glyphicon glyphicon-thumbs-up"></i> Like</a>
+<div class="clearfix"></div>
+
+<div>
+  <ul *ngFor="let comment of allComment" style="list-style-type:none;" class="allcomment">
+    <li> {{comment.comment}} <span style="float:right"> {{comment.CommentDate | date: 'dd/MM/yyyy'}} </span></li>
+  </ul>
+</div>
+<div>
+  <div class="form-group">
+    <textarea cols="5" rows="3" [(ngModel)]="myComment" name="myComment" class="form-control">  </textarea>
+    <div class="stats">
+      <button (click)="postAllComment()" class="btn btn-sm btn-primary stat-item">Encourage</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="row">
+  <div *ngFor="let match of matches" class="col-xs-12 <col-sm-4></col-sm-4>">
+    <div class="panel panel-default">
+      <div class="panel-heading">Match 1, Pune University <span class="pull-right">15 Jun 2017</span></div>
+      <div class="panel-body">
+        <div class="col-xs-5 text-center">
+          <img class="comp-logo" src="https://media.glassdoor.com/sqll/15675/infovision-squarelogo.png" alt="Img1" />
+          <p>{{match.opponent1}}</p>
+        </div>
+        <div class="col-xs-2 text-center">
+          <p class="vs">V/S</p>
+        </div>
+        <div class="col-xs-5 text-center">
+          <img class="comp-logo" src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAANrAAAAJDliOGVjMmExLTcwZDAtNDM5Ni1hMjJiLWMwOTA0NjNkMjFjMQ.png"
+            alt="Img1" />
+          <p>{{match.opponent2}}</p>
+        </div>
+
+      </div>
+      <div class="panel-footer">
+
+        <a href="javascript:void(0);" class="pull-left"><i class="glyphicon glyphicon-comment"></i> 12</a>
+        <a href="javascript:void(0);" class="pull-left"><i class="glyphicon glyphicon-thumbs-up"></i> 26</a>
+
+        <a href="javascript:void(0);" class="pull-right"><i class="glyphicon glyphicon-comment"></i> Comment</a>
+        <a href="javascript:void(0);" class="pull-right"><i class="glyphicon glyphicon-thumbs-up"></i> Like</a>
+        <div class="clearfix"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      Panel content
+    </div>
+    <div class="panel-footer">Panel footer</div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="login">
+    <div class="login-screen">
+        <div class="app-title">
+            <h1>Register</h1>
+        </div>
+
+        <div class="login-form">
+
+            <div class="control-group">
+                <input type="text" class="login-field" value="" placeholder="User Name" [(ngModel)]="username" id="login-name">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
+            <div class="control-group">
+                <input type="password" class="login-field" value="" placeholder="Password" [(ngModel)]="password" id="login-password">
+                <label class="login-field-icon fui-user" for="login-password"></label>
+            </div>
+            <div class="control-group">
+                <input type="text" class="login-field" value="" placeholder="email address" [(ngModel)]="email" id="login-name">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
+
+            <a class="btn btn-primary btn-large btn-block" (click)="register()">register</a>
+
+        </div>
+        <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    </div>
+</div>

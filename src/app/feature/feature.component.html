@@ -1,0 +1,20 @@
+<h2>Application Feature!</h2>
+<br />
+<a routerLink="/">Back to Home</a>
+
+<!--
+<select #input class="tokenize-demo" multiple>
+    <option value="a">Africa</option>
+    <option value="b">Americas</option>
+    <option value="c">Asia</option>
+    <option value="d">Europe</option>
+    <option value="e">Oceania</option>
+</select>
+-->
+
+<select #input class="tokenize-demo" multiple [(ngModel)]="selectedValue">
+  <option *ngFor="let c of countries" [ngValue]="c">{{c.name}}</option>
+</select>
+
+<button (click)="getTokens()">Get Selected Users</button>
+
