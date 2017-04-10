@@ -16,6 +16,7 @@ export class CommentComponent implements OnInit {
     userdata: any;
     error: string;
     myComment: string;
+    alreadyLiked: boolean;
 
 
     constructor(
@@ -26,11 +27,26 @@ export class CommentComponent implements OnInit {
 
 
     ngOnInit(): void {
+        this.setUser();
         this.getCommentCount();
         this.getlikeCount();
         this.getComment();
+        this.isRecognitionLikedByMe();
     }
 
+    isRecognitionLikedByMe() {
+        this.dataService.isRecognitionLikedByMe(this.userdata._id, this.recognitionId)
+            .subscribe(
+            result => {
+                this.alreadyLiked = result.count > 0;
+            },
+            err => {
+                if (err === 'Unauthorized') {
+                    this.router.navigateByUrl('/login');
+                }
+            }
+            )
+    }
     getComment() {
         //console.log(this.recognitionId);
         this.dataService.getComments(this.recognitionId)
@@ -46,6 +62,9 @@ export class CommentComponent implements OnInit {
                 }
             }
             )
+    }
+
+    setUser() {
         var user = localStorage.getItem('usercontext');
         this.userdata = JSON.parse(user);
         // console.log(this.userdata);
@@ -111,14 +130,11 @@ export class CommentComponent implements OnInit {
 
 
     postLikeCounts() {
-        debugger;
-        //alert();
         this.dataService.postLikeCount(this.userdata._id, this.recognitionId).subscribe(
             result => {
                 if (result.data === true) {
-
                     this.getlikeCount();
-
+                    this.isRecognitionLikedByMe();
                 } else {
                     this.error = "Login failed";
                 }

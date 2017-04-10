@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
         private dataService: DataService) { }
 
     ngOnInit() { 
-        this.projectName = this.dataService.getProjectName();
+        
     }
 
     login(){

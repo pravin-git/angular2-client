@@ -1,7 +1,8 @@
 <a href="javascript:void(0);" class="pull-left"><i class="glyphicon glyphicon-comment"></i> {{commentCount}}</a>
 <a href="javascript:void(0);" class="pull-left"><i class="glyphicon glyphicon-thumbs-up"></i> {{likeCount}}</a>
 <a class="pull-right"><i class="glyphicon glyphicon-comment"></i> Comment</a>
-<a (click)="postLikeCounts()" class="pull-right"><i class="glyphicon glyphicon-thumbs-up"></i> Like</a>
+
+<a *ngIf="!alreadyLiked" (click)="postLikeCounts()" class="pull-right"><i class="glyphicon glyphicon-thumbs-up"></i> Like </a>
 <div class="clearfix"></div>
 
 <div>
