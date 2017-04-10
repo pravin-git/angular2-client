@@ -4,24 +4,27 @@
             <h1>Register</h1>
         </div>
 
-        <div class="login-form">
+        <div class="login-form"> 
+            <h2 class="no-margin-top bottom-buffer-20">Register </h2>
 
             <div class="control-group">
-                <input type="text" class="login-field" value="" placeholder="User Name" [(ngModel)]="username" id="login-name">
-                <label class="login-field-icon fui-user" for="login-name"></label>
+                <input type="text" class="form-control input-lg" value="" placeholder="User Name" [(ngModel)]="username" id="login-name">
+               
             </div>
             <div class="control-group">
-                <input type="password" class="login-field" value="" placeholder="Password" [(ngModel)]="password" id="login-password">
-                <label class="login-field-icon fui-user" for="login-password"></label>
+                <input type="password" class="form-control input-lg" value="" placeholder="Password" [(ngModel)]="password" id="login-password">
+                
             </div>
             <div class="control-group">
-                <input type="text" class="login-field" value="" placeholder="email address" [(ngModel)]="email" id="login-name">
-                <label class="login-field-icon fui-user" for="login-name"></label>
+                <input type="text" class="form-control input-lg" value="" placeholder="email address" [(ngModel)]="email" id="login-name">
+               
             </div>
+<div *ngIf="error" class="alert alert-danger">{{error}}</div>
+            <a class="btn btn-primary btn-lg btn-block" (click)="register()">Register</a>
 
-            <a class="btn btn-primary btn-large btn-block" (click)="register()">register</a>
+            <a class="btn btn-default btn-block" routerLink="/login">Login</a>
 
         </div>
-        <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+        
     </div>
 </div>

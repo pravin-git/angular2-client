@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <base href="/">
-    <title>IVL Recognition System</title>
+    <title>Labs Recognition System</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Angular Bare Bones Starter">
@@ -13,34 +14,31 @@
     <script type="text/javascript" src="./scripts/tokenize2.min.js"></script>
     <link href="styles/styles.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="./scripts/tokenize2.min.css" />
-    
+
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
 
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-	<!-- remove for bundle usage -->
-	<script src="systemjs.config.js"></script>
-	<script>
-		System.import('app').catch(function(err){ console.error(err); });
-	</script>
-	<!-- remove for bundle usage -->
-    
+    <!-- remove for bundle usage -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function (err) { console.error(err); });
+    </script>
+    <!-- remove for bundle usage -->
+
 </head>
+
 <body>
 
-   
+
 
     <header class="navbar navbar-inner navbar-fixed-top">
         <nav class="container">
             <div class="navbar-header">
-              <span class="app-title">IVL Recognition System</span>
+                <span class="app-title">Labs Recognition System</span>
             </div>
-            <ul class="nav pull-right">
-                <li role="presentation"><a  (click)=logout()>Logout</a></li>
-           
-          </ul>
         </nav>
     </header>
 
@@ -58,12 +56,13 @@
             <div class="navbar-inner footer">
                 <div class="container">
                     <footer>
-                        @pravin
+                        @Labs Recognition System
                     </footer>
                 </div>
             </div>
         </div>
     </footer>
-        
+
 </body>
+
 </html>

@@ -92,12 +92,17 @@ border-radius: 5px
     
 .login-form {
 text-align: center;
+background-color: #fff;
+border: 2px solid #ddd;
+padding:30px;
+width: 400px;
+margin: 0 auto;
 }
 .control-group {
 margin-bottom: 10px;
 }
 
-input {
+/*input {
 text-align: center;
 background-color: #ECF0F1;
 border: 2px solid transparent;
@@ -107,14 +112,14 @@ font-weight: 200;
 padding: 10px 0;
 width: 250px;
 transition: border .5s;
-}
+}*/
 
 input:focus {
 border: 2px solid #3498DB;
 box-shadow: none;
 }
 
-.btn {
+/*.btn {
   border: 2px solid transparent;
   background: #3498DB;
   color: #ffffff;
@@ -133,7 +138,7 @@ box-shadow: none;
 
 .btn:hover {
   background-color: #2980B9;
-}
+}*/
 
 .login-link {
   font-size: 12px;
@@ -156,10 +161,40 @@ box-shadow: none;
 
 
 
+
 /*******************comment page***************************/
+.allcomment{padding: 0;}
 .allcomment li{
-       border:1px solid grey;
-       border-radius:10px;
+       border-top:1px solid #ddd;
+      /* border-radius:10px;*/
        padding:5px;
-       margin-top:5px;
+       margin-top:5px;display: block;
 }
+
+
+
+
+
+/* overwrite css */
+.panel{margin-bottom: 40px;}
+a:hover, a:focus{text-decoration: none;cursor: pointer;}
+.top-buffer-15{margin-top: 15px;}
+.top-buffer-5{margin-top: 5px;}
+.no-margin{margin: 0}
+.no-margin-bottom{margin-bottom: 0;}
+.bottom-buffer-20{margin-bottom:20px;}
+.no-margin-top{margin-top: 0;}
+.bottom-buffer-10{margin-bottom: 10px;}
+.btn, .panel, .input-group-addon{border-radius: 0;}
+.nominate-user .ng2-tag-input__text-input{border: none !important; border-radius: 0 !important; background-color: #fff;text-align: left;}
+.nominate-user .ng2-tag-input.dark{border-color: #ddd !important;margin-bottom: 15px;}
+.nominate-user .dark[_ngcontent-c0]   tag[_ngcontent-c0]{border-radius: 0;padding: 0px 10px;}
+.nominate-user-list{margin: 0;padding: 0;}
+.nominate-user-list li{display: inline;border-radius: 0;margin-right: 5px;font-size: 14px;text-transform: capitalize !important}
+.form-control{border-radius: 0;}
+.nominate-user  [_nghost-c1] > div[_ngcontent-c1]{   margin-top: -2px;text-transform: capitalize !important}
+.ng2-dropdown-menu[_ngcontent-c3]{border-top: 1px solid #eee;}
+.ng2-dropdown-menu .ng2-menu-item{text-transform: capitalize !important}
+.font-12{font-size: 12px;}
+
+.input-group-addon.primary{background-color:#337ab7;color: #fff;}
