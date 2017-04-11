@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommentComponent } from '../comment/comment.component';
 import { Router } from '@angular/router';
 import { DataService } from '../shared/data.service';
-import { TagInputModule  } from 'ng2-tag-input';
+import { TagInputModule } from 'ng2-tag-input';
 
 
 @Component({
@@ -14,13 +14,13 @@ export class RecognitionComponent implements OnInit {
 
     userdata: any;
     recongnitions: any[];
-    myblog: string;
+    mynominationText: string;
     error: string;
-   
+
 
     users: any[];
     selectedUsers = new Array();
-  
+
     constructor(
         private router: Router,
         private dataService: DataService) {
@@ -32,21 +32,20 @@ export class RecognitionComponent implements OnInit {
         this.getUsers();
     }
 
-    onItemAdded(e:any){
+    onItemAdded(e: any) {
         this.selectedUsers.push(e.value);
         console.log(e.value);
     }
 
-    onItemRemoved(e:any){
+    onItemRemoved(e: any) {
         let index: number = this.selectedUsers.indexOf(e.value);
         if (index !== -1) {
             this.selectedUsers.splice(index, 1);
-        }   
+        }
     }
 
     getUsers() {
-        this.dataService.getUsers()
-            .subscribe(
+        this.dataService.getUsers().subscribe(
             (result) => {
                 this.users = result.data;
             },
@@ -55,7 +54,7 @@ export class RecognitionComponent implements OnInit {
                     this.router.navigateByUrl('/login');
                 }
             }
-            )
+        )
     }
 
     setUsersFromStorage() {
@@ -64,8 +63,7 @@ export class RecognitionComponent implements OnInit {
     }
 
     getRecognitions() {
-        this.dataService.getRecognitions()
-            .subscribe(
+        this.dataService.getRecognitions().subscribe(
             (result) => {
                 this.recongnitions = result.data;
             },
@@ -74,28 +72,23 @@ export class RecognitionComponent implements OnInit {
                     this.router.navigateByUrl('/login');
                 }
             }
-            )
+        )
     }
 
 
     addRecongnition() {
 
-        this.dataService.postRecognitions(this.myblog, this.userdata._id, this.selectedUsers).subscribe(
+        this.dataService.postRecognitions(this.mynominationText, this.userdata._id, this.selectedUsers).subscribe(
             result => {
                 if (result.data === true) {
-
-                    this.dataService.getRecognitions().subscribe(
-                        result => {
-                            this.recongnitions = result.data;
-                        }
-                    )
-
+                    this.getRecognitions();
+                    this.mynominationText = "";
+                    this.selectedUsers = new Array();
                 } else {
                     this.error = "Login failed";
                 }
             }
         )
-
     }
 
 

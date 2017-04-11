@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col-sm-12 nominate-user">
-        <tag-input [ngModel]="[]"  placeholder="Another colleague" secondaryPlaceholder="Start nominating colleagues"  theme='dark' (onAdd)="onItemAdded($event)" (onRemove)="onItemRemoved($event)" [onlyFromAutocomplete]="true">
+        <tag-input [ngModel]="selectedUsers"  placeholder="Another colleague" secondaryPlaceholder="Start nominating colleagues"  theme='dark' (onAdd)="onItemAdded($event)" (onRemove)="onItemRemoved($event)" [onlyFromAutocomplete]="true">
             <tag-input-dropdown theme='dark' [showDropdownIfEmpty]="true" [autocompleteItems]="users">
             </tag-input-dropdown>
         </tag-input>
@@ -19,7 +19,7 @@
 
             <div class="post-description postbox">
 
-                <textarea cols="5" rows="3" placeholder="Thank you very much for your help" class="form-control" [(ngModel)]="myblog">  </textarea>
+                <textarea cols="5" rows="3" placeholder="Thank you very much for your help" class="form-control" [(ngModel)]="mynominationText">  </textarea>
 
                 <div class="pull-right top-buffer-15">
                     <a (click)="addRecongnition()" class="btn btn-primary btn-lg">Appreciate</a>

@@ -10,7 +10,7 @@
 <div>
   <ul class="allcomment">
     <li *ngFor="let comment of allComment"> {{comment.comment}}
-      <p class="font-12 text-muted no-margin-bottom top-buffer-5"> {{comment.CommentDate | date: 'dd/MM/yyyy'}} | by Vicky</p>
+      <p class="font-12 text-muted no-margin-bottom top-buffer-5"> {{comment.CommentDate | date: 'dd/MM/yyyy'}} | by {{comment.commentedBy.username}}</p>
     </li>
   </ul>
 </div>

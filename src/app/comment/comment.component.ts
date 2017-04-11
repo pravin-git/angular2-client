@@ -21,10 +21,9 @@ export class CommentComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private dataService: DataService) { }
+        private dataService: DataService) {
 
-
-
+    }
 
     ngOnInit(): void {
         this.setUser();
@@ -35,8 +34,7 @@ export class CommentComponent implements OnInit {
     }
 
     isRecognitionLikedByMe() {
-        this.dataService.isRecognitionLikedByMe(this.userdata._id, this.recognitionId)
-            .subscribe(
+        this.dataService.isRecognitionLikedByMe(this.userdata._id, this.recognitionId).subscribe(
             result => {
                 this.alreadyLiked = result.count > 0;
             },
@@ -45,62 +43,45 @@ export class CommentComponent implements OnInit {
                     this.router.navigateByUrl('/login');
                 }
             }
-            )
+        )
     }
-    getComment() {
-        //console.log(this.recognitionId);
-        this.dataService.getComments(this.recognitionId)
 
-            .subscribe(
+    getComment() {
+        this.dataService.getComments(this.recognitionId).subscribe(
             (result) => {
                 this.allComment = result.data;
-                //console.log( result.data);
             },
             (err) => {
                 if (err === 'Unauthorized') {
                     this.router.navigateByUrl('/login');
                 }
             }
-            )
+        )
     }
 
     setUser() {
         var user = localStorage.getItem('usercontext');
         this.userdata = JSON.parse(user);
-        // console.log(this.userdata);
     }
 
-
-
-
     postAllComment() {
-        // alert();
-        //console.log(this.commentCounter++);
-
-        debugger;
         this.dataService.postComments(this.myComment, this.userdata._id, this.recognitionId).subscribe(
             result => {
                 if (result.data === true) {
 
                     this.getComment();
                     this.getCommentCount();
+                    this.myComment = "";
 
                 } else {
                     this.error = "fail to post your comment";
                 }
             }
         )
-
-
     }
 
-
-
-
     getCommentCount() {
-
-        this.dataService.getCommentCount(this.recognitionId)
-            .subscribe(
+        this.dataService.getCommentCount(this.recognitionId).subscribe(
             (result) => {
                 this.commentCount = result.count;
             },
@@ -109,12 +90,11 @@ export class CommentComponent implements OnInit {
                     this.router.navigateByUrl('/login');
                 }
             }
-            );
+        );
     }
 
     getlikeCount() {
-        this.dataService.getLikeCount(this.recognitionId)
-            .subscribe(
+        this.dataService.getLikeCount(this.recognitionId).subscribe(
             (result) => {
                 this.likeCount = result.count;
             },
@@ -123,11 +103,8 @@ export class CommentComponent implements OnInit {
                     this.router.navigateByUrl('/login');
                 }
             }
-            );
+        );
     }
-
-
-
 
     postLikeCounts() {
         this.dataService.postLikeCount(this.userdata._id, this.recognitionId).subscribe(
@@ -141,6 +118,4 @@ export class CommentComponent implements OnInit {
             }
         )
     }
-
-
 }
