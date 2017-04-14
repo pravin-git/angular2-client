@@ -28,9 +28,7 @@ export class LoginComponent implements OnInit {
         .subscribe(
             result => {
                 if(result.data === true){
-                   // console.log(result.token);
                     localStorage.setItem('token', result.token);
-                    console.log(result.usercontext);
                     localStorage.setItem('usercontext', JSON.stringify(result.usercontext));
                     this.router.navigate(['recognition']);
                 }else{

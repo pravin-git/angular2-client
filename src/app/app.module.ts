@@ -18,13 +18,14 @@ import { AuthGuard } from './guards/auth.guard';
 
 import { appRouting } from './app.routing';
 import { DataService } from './shared/data.service';
+import { LoginEventService } from './shared/loginEvent.service';
 //import { ExtendedHttpService } from './shared/extendedHttpService';
 
 @NgModule({
   imports:      [ TagInputModule, BrowserModule, FormsModule, HttpModule, appRouting.routes, BrowserAnimationsModule],
   declarations: [ AppComponent, appRouting.components ],
   //providers:    [ DataService, AuthGuard, { provide: HttpModule, useClass: ExtendedHttpService} ],
-  providers:    [ DataService, AuthGuard, HttpModule ],
+  providers:    [ DataService, LoginEventService, AuthGuard, HttpModule ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

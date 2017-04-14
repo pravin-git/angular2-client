@@ -6,7 +6,8 @@
 
 <div class="row">
     <div class="col-sm-12 nominate-user">
-        <tag-input [ngModel]="selectedUsers"  placeholder="Another colleague" secondaryPlaceholder="Start nominating colleagues"  theme='dark' (onAdd)="onItemAdded($event)" (onRemove)="onItemRemoved($event)" [onlyFromAutocomplete]="true">
+        <tag-input [ngModel]="selectedUsers" placeholder="Another colleague" secondaryPlaceholder="Start nominating colleagues" theme='dark'
+            (onAdd)="onItemAdded($event)" (onRemove)="onItemRemoved($event)" [onlyFromAutocomplete]="true">
             <tag-input-dropdown theme='dark' [showDropdownIfEmpty]="true" [autocompleteItems]="users">
             </tag-input-dropdown>
         </tag-input>
@@ -43,16 +44,8 @@
                 <div class="clearfix"></div>
             </div>
             <div class="panel-body">
-
-                <!--<div class="col-xs-2 text-center">
-                    <i class="glyphicon glyphicon-star gi-3x"></i>
-                </div>-->
-
                 <p>{{recongnition.recognition}}</p>
                 <label><span class="text-muted">by -</span> <span class="text-primary">{{recongnition.creator.username}}</span></label>
-
-
-
             </div>
             <div class="panel-footer">
                 <my-comment [recognitionId]=recongnition._id></my-comment>

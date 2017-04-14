@@ -4,6 +4,8 @@ import { HomeComponent }     from './home/home.component';
 import { LoginComponent }     from './login/login.component';
 import { FeatureComponent }   from './feature/feature.component';
 import { Ng2TagComponent }   from './ng2tag/ng2tag.component';
+import { NavbarComponent }   from './navbar/navbar.component';
+import { FooterComponent }   from './footer/footer.component';
 
 import { RegisterComponent } from './register/register.component';
 import { RecognitionComponent }   from './recognition/recognition.component';
@@ -27,5 +29,7 @@ const routes: Routes = [
 
 export const appRouting = {
   routes: RouterModule.forRoot(routes),
-  components: [ HomeComponent, LoginComponent, FeatureComponent, RegisterComponent, RecognitionComponent, CommentComponent, Ng2TagComponent ]
+  components: [ 
+    HomeComponent, LoginComponent, FeatureComponent, RegisterComponent,
+    RecognitionComponent, CommentComponent, Ng2TagComponent, NavbarComponent, FooterComponent ]
 };

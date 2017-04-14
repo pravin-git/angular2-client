@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommentComponent } from '../comment/comment.component';
 import { Router } from '@angular/router';
 import { DataService } from '../shared/data.service';
+import { LoginEventService } from '../shared/loginEvent.service';
 import { TagInputModule } from 'ng2-tag-input';
 
 
@@ -23,11 +24,13 @@ export class RecognitionComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private dataService: DataService) {
+        private dataService: DataService,
+        private loginService: LoginEventService) {
         this.setUsersFromStorage();
     }
 
     ngOnInit() {
+        this.loginService.changeNav(true);
         this.getRecognitions();
         this.getUsers();
     }

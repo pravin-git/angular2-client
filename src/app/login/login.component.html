@@ -8,17 +8,17 @@
             <h2 class="no-margin-top bottom-buffer-20">Login </h2>
             <div class="control-group">
                 <input type="text" class="form-control input-lg" value="" placeholder="Username" [(ngModel)]="username" id="login-name">
-               
+
             </div>
 
             <div class="control-group">
                 <input type="password" class="form-control input-lg" value="" placeholder="Password" [(ngModel)]="password" id="login-pass">
-               
+
             </div>
- <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
             <a class="btn btn-primary btn-lg btn-block" (click)=login()>Login</a>
             <a class="btn btn-default btn-block" routerLink="/register">Register</a>
         </div>
-       
+
     </div>
 </div>
