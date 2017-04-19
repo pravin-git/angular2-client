@@ -14,8 +14,8 @@ import { Router } from '@angular/router';
             </a>
         </div>
         <ul class="nav navbar-nav pull-right" *ngIf="isUserloggedIn">
-            <li class="nav-item"><a class="nav-link" routerLink="feature">Home</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="home">About</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="profile">Pravin Pawar</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="feature">Leaderboard</a></li>
             <li class="nav-item"><a class="nav-link" (click)=logout()>Logout</a></li>
         </ul>
     </nav>

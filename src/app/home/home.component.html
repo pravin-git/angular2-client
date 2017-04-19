@@ -1,40 +1,29 @@
 <div class="row">
-  <div *ngFor="let match of matches" class="col-xs-12 <col-sm-4></col-sm-4>">
-    <div class="panel panel-default">
-      <div class="panel-heading">Match 1, Pune University <span class="pull-right">15 Jun 2017</span></div>
-      <div class="panel-body">
-        <div class="col-xs-5 text-center">
-          <img class="comp-logo" src="https://media.glassdoor.com/sqll/15675/infovision-squarelogo.png" alt="Img1" />
-          <p>{{match.opponent1}}</p>
-        </div>
-        <div class="col-xs-2 text-center">
-          <p class="vs">V/S</p>
-        </div>
-        <div class="col-xs-5 text-center">
-          <img class="comp-logo" src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAANrAAAAJDliOGVjMmExLTcwZDAtNDM5Ni1hMjJiLWMwOTA0NjNkMjFjMQ.png"
-            alt="Img1" />
-          <p>{{match.opponent2}}</p>
-        </div>
-
-      </div>
-      <div class="panel-footer">
-
-        <a href="javascript:void(0);" class="pull-left"><i class="glyphicon glyphicon-comment"></i> 12</a>
-        <a href="javascript:void(0);" class="pull-left"><i class="glyphicon glyphicon-thumbs-up"></i> 26</a>
-
-        <a href="javascript:void(0);" class="pull-right"><i class="glyphicon glyphicon-comment"></i> Comment</a>
-        <a href="javascript:void(0);" class="pull-right"><i class="glyphicon glyphicon-thumbs-up"></i> Like</a>
-        <div class="clearfix"></div>
-
-      </div>
-    </div>
+  <div class="col-sm-12">
+    <h3>Nominate</h3>
   </div>
 </div>
+
 <div class="row">
-  <div class="panel panel-default">
-    <div class="panel-body">
-      Panel content
-    </div>
-    <div class="panel-footer">Panel footer</div>
+  <div class="col-sm-12 nominate-user">
+    <tag-input [ngModel]="selectedUsers" placeholder="Another colleague" secondaryPlaceholder="Start nominating colleagues" theme='dark'
+      (onAdd)="onItemAdded($event)" (onRemove)="onItemRemoved($event)" [onlyFromAutocomplete]="true">
+      <tag-input-dropdown theme='dark' [showDropdownIfEmpty]="true" [autocompleteItems]="users">
+      </tag-input-dropdown>
+    </tag-input>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-white post panel-shadow">
+      <div class="post-description postbox">
+        <textarea cols="5" rows="3" placeholder="Thank you very much for your help" class="form-control" [(ngModel)]="mynominationText">  </textarea>
+        <div class="pull-right top-buffer-15">
+          <a (click)="addRecongnition()" class="btn btn-primary btn-lg">Appreciate</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<my-recognition #child></my-recognition>

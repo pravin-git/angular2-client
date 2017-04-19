@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'feature', component: FeatureComponent },
   { path: 'ng2', component: Ng2TagComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'recognition', component: RecognitionComponent }, 
+  { path: 'recognition', component: RecognitionComponent, canActivate: [AuthGuard] }, 
   { path: 'comment', component: CommentComponent },
 
 ];

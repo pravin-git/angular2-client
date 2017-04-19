@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
                 if(result.data === true){
                     localStorage.setItem('token', result.token);
                     localStorage.setItem('usercontext', JSON.stringify(result.usercontext));
-                    this.router.navigate(['recognition']);
+                    this.router.navigate(['home']);
                 }else{
                     this.error = "Login failed";
                 }
