@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { DataService } from '../shared/data.service';
 import { LoginEventService } from '../shared/loginEvent.service';
 import { TagInputModule } from 'ng2-tag-input';
+import { RecognitionComponent } from '../recognition/recognition.component';
 
 @Component({
     moduleId: module.id,
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
     users: any[];
     selectedUsers = new Array();
 
-    @ViewChild('child') childComponent: ElementRef;
+    @ViewChild('child') childComponent: RecognitionComponent;
    
 
     constructor(
